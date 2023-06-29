@@ -6,11 +6,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatTextView;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.work.*;
 import com.radius.property.picker.adapter.FaciltyAdapter;
+import com.radius.property.picker.databinding.ActivityMainBinding;
 import com.radius.property.picker.job.FacilitiesWorkManager;
 import com.radius.property.picker.presenter.MainContract;
 import com.radius.property.picker.presenter.MainPresenter;
@@ -23,21 +23,19 @@ import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity implements MainContract.MainView {
 
-    private RecyclerView recyclerView;
     private Context context;
     private Constraints constraints;
     private SharedPreferences sharedPreferences;
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         context = this;
         sharedPreferences = getSharedPreferences(Constant.SHARED_PREFERENCE_KEY, Context.MODE_PRIVATE);
-        recyclerView = findViewById(R.id.rvFacility);
-        final AppCompatTextView tvFacilityTitle = findViewById(R.id.tvFacilityTitle);
-        tvFacilityTitle.setText("Property Type");
+        binding.tvFacilityTitle.setText("Property Type");
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
             /**
@@ -83,8 +81,8 @@ public class MainActivity extends AppCompatActivity implements MainContract.Main
         if (noticeArrayList.size() > 0) {
 
             FaciltyAdapter faciltyAdapter = new FaciltyAdapter(context, noticeArrayList, recyclerViewOnClick);
-            recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            recyclerView.setAdapter(faciltyAdapter);
+            binding.rvFacility.setLayoutManager(new LinearLayoutManager(context));
+            binding.rvFacility.setAdapter(faciltyAdapter);
             faciltyAdapter.notifyDataSetChanged();
         } else {
             MainActivity.this.recreate();

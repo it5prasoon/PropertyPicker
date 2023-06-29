@@ -10,7 +10,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name="com.radius.property.picker.views.DisplayChosen" android:exported="true"/>
+        <activity android:name="com.radius.property.picker.views.DisplayChosenActivity" android:exported="true"/>
         <activity android:name="com.radius.property.picker.views.OtherFacilitiesActivity" android:exported="true"/>
         <activity android:name="com.radius.property.picker.views.RoomsNumberActivity" android:exported="true"/>
         <activity android:name="com.radius.property.picker.MainActivity" android:exported="true">

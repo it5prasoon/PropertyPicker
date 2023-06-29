@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.radius.property.picker.databinding.FacilityAdapterBinding;
 import com.radius.property.picker.presenter.MainContract;
 import com.radius.property.picker.R;
 import com.radius.property.picker.room.FacilitiesTable;
