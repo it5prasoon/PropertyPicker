@@ -8,7 +8,6 @@ import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import com.radius.property.picker.MainActivity;
 import com.radius.property.picker.R;
 import com.radius.property.picker.adapter.FaciltyAdapter;
 import com.radius.property.picker.databinding.ActivityMainBinding;

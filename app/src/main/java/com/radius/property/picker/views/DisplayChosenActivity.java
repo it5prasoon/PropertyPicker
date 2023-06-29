@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import com.radius.property.picker.MainActivity;
 import com.radius.property.picker.R;
 import com.radius.property.picker.databinding.ActivityChooseDisplayBinding;
 import com.radius.property.picker.utils.Constant;

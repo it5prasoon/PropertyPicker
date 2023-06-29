@@ -1,4 +1,4 @@
-package com.radius.property.picker;
+package com.radius.property.picker.views;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.work.*;
+import com.radius.property.picker.R;
 import com.radius.property.picker.adapter.FaciltyAdapter;
 import com.radius.property.picker.databinding.ActivityMainBinding;
 import com.radius.property.picker.job.FacilitiesWorkManager;
@@ -16,7 +17,6 @@ import com.radius.property.picker.presenter.MainContract;
 import com.radius.property.picker.presenter.MainPresenter;
 import com.radius.property.picker.room.FacilitiesTable;
 import com.radius.property.picker.utils.Constant;
-import com.radius.property.picker.views.RoomsNumberActivity;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.Main
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        binding = DataBindingUtil.setContentView(this, com.radius.property.picker.R.layout.activity_main);
 
         context = this;
         sharedPreferences = getSharedPreferences(Constant.SHARED_PREFERENCE_KEY, Context.MODE_PRIVATE);
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.Main
             editor.apply();
 
             startActivity(intent);
-            overridePendingTransition(R.anim.enter, R.anim.exit);
+            overridePendingTransition(com.radius.property.picker.R.anim.enter, R.anim.exit);
             finish();
         }
     };

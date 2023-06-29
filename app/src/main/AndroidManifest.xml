@@ -13,7 +13,7 @@
         <activity android:name="com.radius.property.picker.views.DisplayChosenActivity" android:exported="true"/>
         <activity android:name="com.radius.property.picker.views.OtherFacilitiesActivity" android:exported="true"/>
         <activity android:name="com.radius.property.picker.views.RoomsNumberActivity" android:exported="true"/>
-        <activity android:name="com.radius.property.picker.MainActivity" android:exported="true">
+        <activity android:name="com.radius.property.picker.views.MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
